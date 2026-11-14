@@ -3,14 +3,14 @@
 <title>LUNA-GUARD | NASA Data & ML Mission Dashboard</title>
 <style>
 :root{--bg:#080e19;--p:#101c2e;--p2:#14243a;--line:#293d58;--txt:#eaf3ff;--muted:#91a7c3;--cyan:#59d9f2;--green:#3bd5a1;--amber:#ffbd59;--red:#ff657a}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 60% -15%,#20395a,var(--bg) 55%);color:var(--txt);font:14px Inter,system-ui,Arial}.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}.side{background:#0b1422;border-right:1px solid var(--line);padding:22px 16px}.brand{font-weight:800;letter-spacing:2px;font-size:17px}.brand b{color:var(--cyan)}.sub{color:var(--muted);font-size:11px}.nav{margin-top:35px}.nav a{display:block;color:#afc0d6;text-decoration:none;padding:12px;border-radius:8px;margin:4px 0}.nav a:first-child,.nav a:hover{background:#182c46;color:white}.sidebox{margin-top:35px;border:1px solid var(--line);background:var(--p);border-radius:10px;padding:13px;font-size:12px;line-height:1.8}main{padding:24px;max-width:1500px;width:100%;margin:auto}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.eyebrow{color:var(--cyan);font-size:10px;letter-spacing:2px}.head h1{font-size:25px;margin:4px 0}.pill,.tag{border:1px solid var(--line);border-radius:20px;padding:7px 11px;color:#b8cbe0;font-size:11px}.grid{display:grid;gap:14px}.metrics{grid-template-columns:repeat(4,1fr);margin-bottom:14px}.metric,.panel{background:linear-gradient(145deg,#122137,#0d1828);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 10px 30px #0002}.metric small{color:var(--muted)}.metric strong{display:block;font-size:26px;margin:7px 0}.green{color:var(--green)}.amber{color:var(--amber)}.red{color:var(--red)}.mainrow{grid-template-columns:1.55fr .9fr}.panel h2{font-size:14px;margin:0 0 5px}.scene{height:350px;position:relative;background:radial-gradient(ellipse at 50% 70%,#253c56,#080f1a 70%);border:1px solid #30465e;border-radius:9px;overflow:hidden}canvas{display:block;width:100%;height:100%}.hud{position:absolute;top:12px;left:12px;background:#071321c9;padding:6px 9px;border-radius:6px;font-size:10px;color:#d7edff}.hint{position:absolute;bottom:10px;left:12px;color:#9bb0c9;font-size:10px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:15px 0}.field label{display:block;color:var(--muted);font-size:10px;margin-bottom:5px}.field select,.field input{width:100%;background:#091524;border:1px solid var(--line);color:white;border-radius:7px;padding:9px}.status{background:#332817;border:1px solid #78592d;border-radius:9px;padding:13px;margin-top:12px}.status strong{font-size:23px;color:var(--amber)}.bar{height:7px;background:#293a50;border-radius:9px;overflow:hidden;margin:7px 0}.bar i{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--cyan),var(--amber))}.reason{padding:8px 0;border-bottom:1px solid #26364c;color:#c3d1e2;font-size:11px}.lower{grid-template-columns:repeat(3,1fr);margin-top:14px}.chart{height:155px}.timeline{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;margin:17px 0 8px}.hour{height:34px;background:#9d3d51;border-radius:3px}.hour.good{background:#168b70}.hour.mid{background:#a7772d}.labels{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.table{width:100%;border-collapse:collapse;font-size:11px;margin-top:12px}.table th,.table td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font-weight:500}.btn{background:#12354b;border:1px solid #35617c;color:#e1faff;border-radius:7px;padding:9px 12px;cursor:pointer;transition:all .15s ease}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 60% -15%,#20395a,var(--bg) 55%);color:var(--txt);font:14px Inter,system-ui,Arial}.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}.side{background:#0b1422;border-right:1px solid var(--line);padding:22px 16px}.brand{font-weight:800;letter-spacing:2px;font-size:17px}.brand b{color:var(--cyan)}.sub{color:var(--muted);font-size:11px}.nav{margin-top:35px}.nav a{display:block;color:#afc0d6;text-decoration:none;padding:12px;border-radius:8px;margin:4px 0}.nav a.active,.nav a:hover{background:#182c46;color:white}.sidebox{margin-top:35px;border:1px solid var(--line);background:var(--p);border-radius:10px;padding:13px;font-size:12px;line-height:1.8}main{padding:24px;max-width:1500px;width:100%;margin:auto}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.eyebrow{color:var(--cyan);font-size:10px;letter-spacing:2px}.head h1{font-size:25px;margin:4px 0}.pill,.tag{border:1px solid var(--line);border-radius:20px;padding:7px 11px;color:#b8cbe0;font-size:11px}.grid{display:grid;gap:14px}.metrics{grid-template-columns:repeat(4,1fr);margin-bottom:14px}.metric,.panel{background:linear-gradient(145deg,#122137,#0d1828);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 10px 30px #0002}.metric small{color:var(--muted)}.metric strong{display:block;font-size:26px;margin:7px 0}.green{color:var(--green)}.amber{color:var(--amber)}.red{color:var(--red)}.mainrow{grid-template-columns:1.55fr .9fr}.panel h2{font-size:14px;margin:0 0 5px}.scene{height:350px;position:relative;background:radial-gradient(ellipse at 50% 70%,#253c56,#080f1a 70%);border:1px solid #30465e;border-radius:9px;overflow:hidden}canvas{display:block;width:100%;height:100%}.hud{position:absolute;top:12px;left:12px;background:#071321c9;padding:6px 9px;border-radius:6px;font-size:10px;color:#d7edff}.hint{position:absolute;bottom:10px;left:12px;color:#9bb0c9;font-size:10px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:15px 0}.field label{display:block;color:var(--muted);font-size:10px;margin-bottom:5px}.field select,.field input{width:100%;background:#091524;border:1px solid var(--line);color:white;border-radius:7px;padding:9px}.status{background:#332817;border:1px solid #78592d;border-radius:9px;padding:13px;margin-top:12px}.status strong{font-size:23px;color:var(--amber)}.bar{height:7px;background:#293a50;border-radius:9px;overflow:hidden;margin:7px 0}.bar i{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--cyan),var(--amber))}.reason{padding:8px 0;border-bottom:1px solid #26364c;color:#c3d1e2;font-size:11px}.lower{grid-template-columns:repeat(3,1fr);margin-top:14px}.chart{height:155px}.timeline{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;margin:17px 0 8px}.hour{height:34px;background:#9d3d51;border-radius:3px}.hour.good{background:#168b70}.hour.mid{background:#a7772d}.labels{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.table{width:100%;border-collapse:collapse;font-size:11px;margin-top:12px}.table th,.table td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font-weight:500}.btn{background:#12354b;border:1px solid #35617c;color:#e1faff;border-radius:7px;padding:9px 12px;cursor:pointer;transition:all .15s ease}
 .btn:hover{background:#184561}
 .btn.primary{background:linear-gradient(135deg,#176b87,#1f9d8b);border-color:#4fd1c5;color:#ffffff;font-weight:700}
 .btn.primary:hover{filter:brightness(1.1)}
 .btn-row{display:grid;grid-template-columns:1.35fr 1fr;gap:10px;margin-top:14px}
 .pending-note{display:none;margin-top:10px;padding:8px 10px;border-radius:7px;background:#2a2113;border:1px solid #78592d;color:#ffd9a0;font-size:11px}
 .pending-note.show{display:block}.foot{text-align:center;color:#7186a3;font-size:10px;padding:18px}
-.legend3d{position:absolute;right:10px;top:12px;display:flex;gap:8px;flex-direction:column;background:#071321c9;padding:8px;border-radius:6px;font-size:9px;color:#d7edff}.terrain-controls{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin-top:10px}.terrain-controls div{display:flex;flex-direction:column;gap:4px}.terrain-controls label{font-size:9px;color:var(--muted)}.terrain-controls input{width:112px;background:#091524;border:1px solid var(--line);color:white;border-radius:6px;padding:8px}.scene{touch-action:none}
+.legend3d{position:absolute;right:10px;top:12px;display:flex;gap:8px;flex-direction:column;background:#071321c9;padding:8px;border-radius:6px;font-size:9px;color:#d7edff}.terrain-controls{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin-top:10px}.terrain-controls div{display:flex;flex-direction:column;gap:4px}.terrain-controls label{font-size:9px;color:var(--muted)}.terrain-controls input{width:112px;background:#091524;border:1px solid var(--line);color:white;border-radius:6px;padding:8px}.scene{touch-action:none;height:430px;border-color:#3a5473;box-shadow:inset 0 0 70px #10243d,0 12px 35px #0005}.scene::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 55%,transparent 42%,#0308149c 100%)}.scene canvas{position:relative;z-index:0}.hud,.hint,.legend3d,.map-status{z-index:2}.map-status{position:absolute;top:48px;left:12px;border:1px solid #33516d;background:#071321d9;padding:6px 9px;border-radius:6px;color:#94e9ff;font-size:9px;letter-spacing:.7px}.legend3d span{white-space:nowrap}.site-key{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;background:#ffbd59;box-shadow:0 0 8px #ffbd59}.target-key{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;background:#59d9f2;box-shadow:0 0 8px #59d9f2}
 .advisor{border:1px solid #31516c;background:linear-gradient(145deg,#102b40,#101a2a);border-radius:12px;padding:16px;margin-top:14px}
 .advisor textarea{width:100%;min-height:68px;background:#091524;border:1px solid var(--line);color:white;border-radius:7px;padding:10px;resize:vertical}
 .advisor-output{margin-top:10px;padding:12px;background:#081523;border:1px solid #29445d;border-radius:8px;line-height:1.6;color:#d6e5f5;font-size:12px;white-space:pre-wrap}
@@ -36,26 +36,44 @@
 tr.hl td{background:#102f3b}
 .btn.sm{padding:4px 9px;font-size:10px}
 .brief-grid.g4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:900px){.app{grid-template-columns:1fr}.side{padding:13px}.nav,.sidebox{display:none}main{padding:15px}.metrics{grid-template-columns:repeat(2,1fr)}.mainrow,.lower,.two,.brief-grid,.brief-grid.g4{grid-template-columns:1fr}.head{align-items:flex-start;gap:10px;flex-direction:column}}
+.page-view{display:none}
+.page-view.active{display:block}
+.page-heading{margin:4px 0 18px}
+.page-heading h2{font-size:21px;margin:0 0 5px}
+.page-heading p{margin:0;color:var(--muted);font-size:12px}
+.page-view>section{margin-top:14px}
+.page-view>section:first-of-type{margin-top:0}
+.nav a{font-size:12px}
+.nav a.active{box-shadow:inset 2px 0 var(--cyan)}
+.top-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sun-cursor{position:fixed;left:0;top:0;width:36px;height:36px;z-index:20000;pointer-events:none;opacity:0;transform:translate(-50%,-50%);transition:opacity .15s ease}
+.sun-cursor.visible{opacity:1}
+.sun-cursor svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 5px #ffbd59) drop-shadow(0 0 13px #ff812f);animation:sun-cursor-glow 2.2s ease-in-out infinite}
+.sun-cursor .rays{fill:none;stroke:#ffe28a;stroke-width:2.4;stroke-linecap:round}
+.sun-cursor .core{fill:url(#sun-cursor-gradient);stroke:#fff1b0;stroke-width:1}
+.sun-cursor .halo{fill:none;stroke:#ffbd59;stroke-width:1;opacity:.65}
+.sun-cursor.clicking svg{transform:scale(.78)}
+@keyframes sun-cursor-glow{0%,100%{transform:scale(.94)}50%{transform:scale(1.08)}}
+@media(hover:hover) and (pointer:fine){body.sun-cursor-enabled,body.sun-cursor-enabled *{cursor:none!important}}
+@media(hover:none),(pointer:coarse){.sun-cursor{display:none}}
+@media(prefers-reduced-motion:reduce){.sun-cursor svg{animation:none}}
+@media(max-width:900px){.app{grid-template-columns:1fr}.side{padding:13px}.nav{display:flex;gap:4px;overflow-x:auto;margin-top:12px;scrollbar-width:thin}.nav a{flex:0 0 auto;padding:9px 11px;margin:0;white-space:nowrap}.sidebox{display:none}main{padding:15px}.metrics{grid-template-columns:repeat(2,1fr)}.mainrow,.lower,.two,.brief-grid,.brief-grid.g4{grid-template-columns:1fr}.head{align-items:flex-start;gap:10px;flex-direction:column}.scene{height:340px}.legend3d{font-size:8px}}
 </style></head><body><div class="app">
 <aside class="side">
   <div class="brand">☾ <b>LUNA</b>-GUARD</div>
   <div class="sub">MISSION INTELLIGENCE</div>
   <nav class="nav">
-    <a href="#overview">▣ Mission overview</a>
-    <a href="#terrain">◉ 3D terrain explorer</a>
-    <a href="#skyview">⌁ Sun & Earth sky view</a>
-    <a href="#analysis">⌁ Hourly analysis</a>
-    <a href="#energy">ϟ Power simulator</a>
-    <a href="#sustain">ϟ Battery sustainability</a>
-    <a href="#dates">◷ Dates & comms</a>
-    <a href="#sites">⌖ Site comparison</a>
+    <a href="#page-overview" data-page="page-overview" class="active">▣ Overview</a>
+    <a href="#page-planning" data-page="page-planning">◷ Mission planning</a>
+    <a href="#page-sites" data-page="page-sites">◉ Sites &amp; terrain</a>
+    <a href="#page-power" data-page="page-power">ϟ Power</a>
+    <a href="#page-comms" data-page="page-comms">⌁ Communications</a>
   </nav>
   <div class="sidebox">
     <span class="sub">ACTIVE SCENARIO</span><br>
     <b>Artemis South Pole</b><br>
     NASA JPL Horizons + ML<br>
-    <span class="green" id="sideSourceBadge">● LIVE BACKEND CONNECTED</span>
+    <span class="amber" id="sideSourceBadge">● CONNECTING TO BACKEND...</span>
   </div>
 </aside>
 
@@ -64,34 +82,45 @@ tr.hl td{background:#102f3b}
     <div>
       <div class="eyebrow">NASA SPACE APPS · LUNA-GUARD MISSION DASHBOARD</div>
       <h1>Lunar Landing Site Navigator</h1>
-      <div class="sub">Powered by NASA JPL Horizons Ephemeris + Random Forest South Pole Horizon Surrogate.</div>
+      <div class="sub">NASA JPL Horizons when reachable · ML terrain estimates from the project's generated training grid.</div>
     </div>
-    <div class="pill"><span id="backendStatusPill">● CONNECTING TO NASA + ML BACKEND...</span> &nbsp; <button class="btn" onclick="window.print()">Export view</button></div>
+    <div class="top-status"><span class="pill" id="backendStatusPill">● CONNECTING TO NASA + ML BACKEND...</span><button class="btn" onclick="window.print()">Export view</button></div>
   </header>
 
-  <section class="grid metrics">
-    <div class="metric"><small>MISSION READINESS</small><strong id="score">68/100</strong><span class="amber" id="decision">▲ Conditional opportunity</span></div>
-    <div class="metric"><small>SUN ELEVATION (SELECTED HR)</small><strong id="sun">+8.4°</strong><span class="green" id="sunsub">NASA JPL Horizons</span></div>
-    <div class="metric"><small>EARTH VISIBILITY</small><strong id="earth">Visible</strong><span class="green" id="earthsub">Direct link possible</span></div>
-    <div class="metric"><small>BATTERY RESERVE</small><strong id="battery">72%</strong><span class="green">Simulated state of charge</span></div>
+  <section class="page-view active" id="page-overview">
+    <div class="page-heading"><h2>Mission overview</h2><p>Live readiness, environmental conditions, and mission recommendations.</p></div>
+    <section class="grid metrics">
+      <div class="metric"><small>MISSION READINESS</small><strong id="score">—</strong><span class="amber" id="decision">Waiting for simulation</span></div>
+      <div class="metric"><small>SUN ELEVATION (SELECTED HR)</small><strong id="sun">—</strong><span class="green" id="sunsub">Awaiting ephemeris</span></div>
+      <div class="metric"><small>EARTH VISIBILITY</small><strong id="earth">—</strong><span class="green" id="earthsub">Awaiting ephemeris</span></div>
+      <div class="metric"><small>BATTERY RESERVE</small><strong id="battery">—</strong><span class="green">Calculated from mission inputs</span></div>
+    </section>
+    <section class="panel" id="brief">
+      <h2>◆ Critical mission brief</h2>
+      <div class="sub">Uses live JPL ephemeris when available; terrain horizon and risk are estimates from the generated ML training grid.</div>
+      <div class="brief-grid" id="briefGrid"></div>
+      <div class="alerts" id="alerts"></div>
+    </section>
+    <section class="advisor" id="advisor">
+      <h2>✦ Mission Advisor</h2>
+      <div class="sub">Rule-based recommendations from the current ephemeris and mission simulation.</div>
+      <textarea id="advisorQuestion" placeholder="Example: Which landing site is better for a 14-day mission with a 12 kW load?"></textarea>
+      <button class="btn" id="askAdvisor" style="margin-top:8px">Analyze mission scenario</button>
+      <div class="advisor-output" id="advisorOutput">Waiting for the first simulation result...</div>
+    </section>
   </section>
 
-  <section class="panel" id="brief" style="margin-bottom:14px">
-    <h2>◆ Critical mission brief</h2>
-    <div class="sub">Key decision factors computed live from NASA JPL Horizons ephemeris and ML terrain profiles.</div>
-    <div class="brief-grid" id="briefGrid"></div>
-    <div class="alerts" id="alerts"></div>
-  </section>
-
-  <section class="grid mainrow">
-    <div class="panel" id="terrain">
+  <section class="page-view" id="page-sites">
+    <div class="page-heading"><h2>Sites &amp; terrain</h2><p>Explore the lunar south pole and compare landing-site suitability.</p></div>
+    <section class="panel" id="terrain">
       <h2>◉ 3D Lunar South-Pole Terrain</h2>
-      <div class="sub">NASA LOLA global elevation globe · drag to rotate · scroll to zoom · click Moon to query ML horizon</div>
+      <div class="sub">NASA LRO imagery + LOLA elevation relief · drag to rotate · scroll to zoom · click Moon to query ML horizon</div>
       <div class="scene">
         <canvas id="globe"></canvas>
         <div class="hud" id="hud">LOLA GLOBAL DEM · SOUTH POLE VIEW</div>
+        <div class="map-status" id="mapStatus">LOADING NASA LUNAR MAP...</div>
         <div class="hint">Drag to orbit · Scroll to zoom · Click Moon to select landing site</div>
-        <div class="legend3d"><span>☀ SUN</span><span>🌍 EARTH</span><span>▰ LANDER</span></div>
+        <div class="legend3d"><span>☀ SUN</span><span>🌍 EARTH</span><span><i class="site-key"></i>LANDING SITES</span><span><i class="target-key"></i>SELECTED TARGET</span></div>
       </div>
       <div class="terrain-controls">
         <div><label>LANDER LATITUDE</label><input id="landerLat" type="number" min="-90" max="90" step=".01" value="-89.45"></div>
@@ -99,118 +128,126 @@ tr.hl td{background:#102f3b}
         <button class="btn" id="placeLander">Place lander &amp; query ML</button>
         <button class="btn" id="resetCamera">Reset camera</button>
       </div>
-      <div class="sub" style="margin-top:9px">Elevation: NASA LRO/LOLA global height map. Clicking any lunar point queries the Random Forest horizon surrogate and NASA JPL Horizons API.</div>
-    </div>
+      <div class="sub" style="margin-top:9px">NASA LRO color and LOLA elevation maps are visual layers. Horizon and risk estimates come from the generated ML training grid; selecting a coordinate queries those estimates and JPL Horizons.</div>
+    </section>
+    <section class="panel" id="sites">
+      <h2>Candidate landing-site comparison</h2>
+      <div class="sub">Ranked live from the Python + ML simulation across the full mission window.</div>
+      <div class="tw"><table class="table"><thead><tr><th>SITE</th><th>SUNLIGHT / DAY</th><th>COMM / DAY</th><th>SOLAR / DAY</th><th>LONGEST DARK</th><th>TERRAIN RISK</th><th>SCORE</th><th>PROFILE</th><th></th></tr></thead><tbody id="sitesBody"></tbody></table></div>
+      <div class="sub" id="comparisonSummary" style="margin-top:10px"></div>
+    </section>
+  </section>
 
-    <div class="panel">
+  <section class="page-view" id="page-planning">
+    <div class="page-heading"><h2>Mission planning</h2><p>Configure mission constraints, compare launch dates, and review the operating timeline.</p></div>
+    <section class="panel">
       <h2>Mission parameters</h2>
       <div class="sub">Adjust your mission inputs below, then click <b>Submit &amp; Calculate</b> to run the NASA + ML simulation.</div>
       <div class="fields">
         <div class="field"><label>LANDING SITE</label><select id="site"><option value="0">Shackleton Connecting Ridge</option><option value="1">de Gerlache Rim</option><option value="2">Malapert Massif</option><option value="3">Haworth Rim</option><option value="4">Nobile Rim</option></select></div>
         <div class="field"><label>MISSION DATE</label><input type="date" id="missionDate" value="2026-11-14"></div>
         <div class="field"><label>MISSION HOUR (UTC)</label><input id="hour" type="range" min="0" max="23" value="12"></div>
-        <div class="field"><label>MISSION DURATION (DAYS)</label><select id="missionDays"><option>7</option><option selected>14</option><option>21</option><option>28</option></select></div>
-        <div class="field"><label>HORIZON MODE</label><select id="horizon"><option value="ml" selected>ML Predicted (LOLA DEM)</option><option value="0">Manual Override · 0°</option><option value="8">Manual Override · 8°</option><option value="16">Manual Override · 16°</option><option value="25">Manual Override · 25°</option></select></div>
+        <div class="field"><label>MISSION DURATION (DAYS)</label><select id="missionDays"><option selected>7</option><option>14</option><option>21</option><option>28</option></select></div>
+        <div class="field"><label>HORIZON MODE</label><select id="horizon"><option value="ml" selected>ML Estimate (Generated Terrain Grid)</option><option value="0">Manual Override · 0°</option><option value="8">Manual Override · 8°</option><option value="16">Manual Override · 16°</option><option value="25">Manual Override · 25°</option></select></div>
         <div class="field"><label>BATTERY CAPACITY (kWh)</label><select id="capacity"><option>100</option><option>150</option><option>200</option><option selected>400</option><option>800</option></select></div>
         <div class="field"><label>BASE LOAD (kW)</label><select id="load"><option>8</option><option selected>12</option><option>18</option></select></div>
         <div class="field"><label>SOLAR ARRAY (kW)</label><select id="array"><option>20</option><option selected>30</option><option>40</option></select></div>
         <div class="field"><label>INITIAL BATTERY CHARGE</label><select id="initCharge"><option value="50">50%</option><option value="80" selected>80%</option><option value="100">100%</option></select></div>
         <div class="field"><label>DARK-MODE LOAD (kW)</label><select id="darkLoad"><option>1</option><option>2</option><option selected>3</option><option>6</option></select></div>
       </div>
-      <div class="status"><small>MISSION DECISION · NASA + ML ENGINE</small><br><strong id="status">CAUTION</strong><p class="sub" id="statusText">Evaluating mission constraints...</p></div>
-      <div style="margin-top:12px;font-size:11px;color:var(--muted)">READINESS INDEX <b id="pct" style="float:right;color:white">68%</b><div class="bar"><i id="bar"></i></div></div>
+      <div class="status"><small>MISSION DECISION · EPHEMERIS + ML MODEL</small><br><strong id="status">WAITING</strong><p class="sub" id="statusText">Waiting for the first simulation result...</p></div>
+      <div style="margin-top:12px;font-size:11px;color:var(--muted)">READINESS INDEX <b id="pct" style="float:right;color:white">—</b><div class="bar"><i id="bar" style="width:0%"></i></div></div>
       <div id="reasons"></div>
       <div class="pending-note" id="pendingNote">● Parameters modified — click <b>Submit &amp; Calculate</b> to update simulation results.</div>
       <div class="btn-row">
         <button class="btn primary" id="submitParamsBtn" type="button">▶ Submit &amp; Calculate</button>
         <button class="btn" id="resetParamsBtn" type="button">↺ Reset Parameters</button>
       </div>
-    </div>
-  </section>
-
-  <section class="grid two" id="skyview">
-    <div class="panel">
-      <h2>⌁ Sun &amp; Earth vs. the lunar horizon</h2>
-      <div class="sub">Azimuth–elevation view from the lander with 24-hour NASA JPL Horizons tracks against the ML-predicted horizon mask.</div>
-      <canvas id="skyCanvas" class="skycv"></canvas>
-      <div class="chips" id="skyInfo"></div>
-    </div>
-    <div class="panel" id="power">
-      <h2>ϟ Solar power generation potential</h2>
-      <div class="sub">Hourly array output vs. base load for the selected date (80% system efficiency).</div>
-      <canvas id="powerChart" style="height:210px"></canvas>
-      <div id="powerKpis" style="margin-top:8px"></div>
-    </div>
-  </section>
-
-  <section class="panel" id="sustain" style="margin-top:14px">
-    <h2>ϟ Solar Energy &amp; Battery Sustainability Simulator</h2>
-    <div class="sub">Hour-by-hour simulation of solar generation, battery charge and darkness backup across the mission, plus a 3-lunar-cycle check of long-term viability.</div>
-    <div class="brief-grid g4" id="sustCards"></div>
-    <canvas id="sustCanvas" style="height:230px"></canvas>
-    <div class="chips" id="sustChips"></div>
-    <h2 style="margin-top:14px">Darkness periods and battery backup</h2>
-    <div class="tw"><table class="table"><thead><tr><th>DARK PERIOD START</th><th>DURATION</th><th>BATTERY AT START</th><th>BATTERY AT END</th><th>RESULT</th></tr></thead><tbody id="sustRuns"></tbody></table></div>
-    <h2 style="margin-top:14px">Long-term suitability by site</h2>
-    <div class="tw"><table class="table"><thead><tr><th>SITE</th><th>SUNLIT (MISSION)</th><th>LONGEST DARK</th><th>BACKUP</th><th>MISSION RESULT</th><th>LONG-TERM</th><th></th></tr></thead><tbody id="sustSites"></tbody></table></div>
-  </section>
-
-  <section class="grid lower" id="analysis">
-    <div class="panel"><h2>☼ Solar elevation profile</h2><div class="sub">NASA JPL Horizons elevation angle (Day 1)</div><canvas id="sunChart" class="chart"></canvas></div>
-    <div class="panel"><h2>⌖ Earth communication</h2><div class="sub">Direct-to-Earth visibility windows (Day 1)</div><canvas id="earthChart" class="chart"></canvas></div>
-    <div class="panel" id="energy"><h2>ϟ Battery simulation</h2><div class="sub">Mission State of Charge (%)</div><canvas id="batteryChart" class="chart"></canvas></div>
-  </section>
-
-  <section class="grid two" id="dates">
-    <div class="panel">
+    </section>
+    <section class="panel" id="dates">
       <h2>◷ Compare landing dates</h2>
       <div class="sub">Mission score across candidate start dates using NASA ephemeris windows.</div>
       <div class="field" style="max-width:200px;margin:10px 0"><label>SPACING BETWEEN DATES</label><select id="dateStep"><option value="1">Daily</option><option value="7" selected>Weekly</option><option value="14">Every 2 weeks</option></select></div>
       <div class="tw"><table class="table"><thead><tr><th>START DATE</th><th>SUN h/d</th><th>COMM h/d</th><th>SOLAR kWh/d</th><th>SCORE</th><th>BATTERY</th><th></th></tr></thead><tbody id="dateBody"></tbody></table></div>
       <div class="sub" id="dateSummary" style="margin-top:10px"></div>
-    </div>
-    <div class="panel">
+    </section>
+    <section class="panel" id="missionTimeline">
+      <h2>Mission timeline simulator</h2>
+      <div class="sub">Daily sunlight, direct-to-Earth communication and combined operating windows across the selected mission duration.</div>
+      <div id="missionTimelineContent"></div>
+      <div class="labels"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>23:00 UTC</span></div>
+    </section>
+  </section>
+
+  <section class="page-view" id="page-power">
+    <div class="page-heading"><h2>Power &amp; sustainability</h2><p>Review solar generation, energy balance, and battery resilience throughout the mission.</p></div>
+    <section class="panel" id="power">
+      <h2>ϟ Solar power generation potential</h2>
+      <div class="sub">Hourly array output vs. base load for the selected date (80% system efficiency).</div>
+      <canvas id="powerChart" style="height:210px"></canvas>
+      <div id="powerKpis" style="margin-top:8px"></div>
+    </section>
+    <section class="panel" id="sustain">
+      <h2>ϟ Solar Energy &amp; Battery Sustainability Simulator</h2>
+      <div class="sub">Hour-by-hour simulation of solar generation, battery charge and darkness backup across the mission, plus a 3-lunar-cycle check of long-term viability.</div>
+      <div class="brief-grid g4" id="sustCards"></div>
+      <canvas id="sustCanvas" style="height:230px"></canvas>
+      <div class="chips" id="sustChips"></div>
+      <h2 style="margin-top:14px">Darkness periods and battery backup</h2>
+      <div class="tw"><table class="table"><thead><tr><th>DARK PERIOD START</th><th>DURATION</th><th>BATTERY AT START</th><th>BATTERY AT END</th><th>RESULT</th></tr></thead><tbody id="sustRuns"></tbody></table></div>
+      <h2 style="margin-top:14px">Long-term suitability by site</h2>
+      <div class="tw"><table class="table"><thead><tr><th>SITE</th><th>SUNLIT (MISSION)</th><th>LONGEST DARK</th><th>BACKUP</th><th>MISSION RESULT</th><th>LONG-TERM</th><th></th></tr></thead><tbody id="sustSites"></tbody></table></div>
+    </section>
+    <section class="grid two" id="analysis">
+      <div class="panel"><h2>☼ Solar elevation profile</h2><div class="sub">NASA JPL Horizons elevation angle (Day 1)</div><canvas id="sunChart" class="chart"></canvas></div>
+      <div class="panel" id="energy"><h2>ϟ Battery simulation</h2><div class="sub">Mission State of Charge (%)</div><canvas id="batteryChart" class="chart"></canvas></div>
+    </section>
+  </section>
+
+  <section class="page-view" id="page-comms">
+    <div class="page-heading"><h2>Communications &amp; visibility</h2><p>Track Earth line-of-sight and operating windows against the lunar horizon.</p></div>
+    <section class="grid two" id="skyview">
+      <div class="panel">
+        <h2>⌁ Sun &amp; Earth vs. the lunar horizon</h2>
+        <div class="sub">Azimuth–elevation view from the lander with 24-hour NASA JPL Horizons tracks against the ML-predicted horizon mask.</div>
+        <canvas id="skyCanvas" class="skycv"></canvas>
+        <div class="chips" id="skyInfo"></div>
+      </div>
+      <div class="panel">
+        <h2>⌖ Earth communication</h2>
+        <div class="sub">Direct-to-Earth visibility windows (Day 1)</div>
+        <canvas id="earthChart" class="chart"></canvas>
+      </div>
+    </section>
+    <section class="panel">
       <h2>⌖ Direct-to-Earth communication windows</h2>
       <div class="sub">Daily UTC windows with clear Earth line-of-sight above the ML terrain mask.</div>
       <div class="chips" id="commChips"></div>
       <div class="scroll tw"><table class="table"><thead><tr><th>DAY</th><th>DATE</th><th>EARTH LINK (UTC)</th><th>TOTAL</th><th>SUN + LINK</th></tr></thead><tbody id="commBody"></tbody></table></div>
-    </div>
+    </section>
   </section>
 
-  <section class="panel" style="margin-top:14px" id="missionTimeline">
-    <h2>Mission timeline simulator</h2>
-    <div class="sub">Daily sunlight, direct-to-Earth communication and combined operating windows across the selected mission duration.</div>
-    <div id="missionTimelineContent"></div>
-    <div class="labels"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>23:00 UTC</span></div>
-  </section>
-
-  <section class="panel" id="sites" style="margin-top:14px">
-    <h2>Candidate landing-site comparison</h2>
-    <div class="sub">Ranked live from the Python + ML simulation across the full mission window.</div>
-    <div class="tw"><table class="table"><thead><tr><th>SITE</th><th>SUNLIGHT / DAY</th><th>COMM / DAY</th><th>SOLAR / DAY</th><th>LONGEST DARK</th><th>TERRAIN RISK</th><th>SCORE</th><th>PROFILE</th><th></th></tr></thead><tbody id="sitesBody"></tbody></table></div>
-    <div class="sub" id="comparisonSummary" style="margin-top:10px"></div>
-  </section>
-
-  <section class="advisor" id="advisor">
-    <h2>✦ AI Mission Advisor</h2>
-    <div class="sub">Ask a mission-planning question based on the live NASA JPL Horizons and ML simulation outputs.</div>
-    <textarea id="advisorQuestion" placeholder="Example: Which landing site is better for a 14-day mission with a 12 kW load?"></textarea>
-    <button class="btn" id="askAdvisor" style="margin-top:8px">Analyze mission scenario</button>
-    <div class="advisor-output" id="advisorOutput">Running initial NASA + ML analysis...</div>
-  </section>
-
-  <div class="foot">LUNA-GUARD · NASA JPL Horizons + LRO/LOLA DEM Random Forest Surrogate · Mission Intelligence Dashboard</div>
+  <div class="foot">LUNA-GUARD · NASA JPL Horizons + generated-grid ML terrain estimates · Mission Intelligence Dashboard</div>
 </main></div>
+<div class="sun-cursor" id="sunCursor" aria-hidden="true">
+  <svg viewBox="0 0 48 48" focusable="false">
+    <defs><radialGradient id="sun-cursor-gradient"><stop offset="0" stop-color="#fffbd0"/><stop offset=".58" stop-color="#ffd55c"/><stop offset="1" stop-color="#ff8a36"/></radialGradient></defs>
+    <path class="rays" d="M24 2v7M24 39v7M2 24h7M39 24h7M8.4 8.4l5 5M34.6 34.6l5 5M39.6 8.4l-5 5M13.4 34.6l-5 5"/>
+    <circle class="halo" cx="24" cy="24" r="15"/>
+    <circle class="core" cx="24" cy="24" r="10.5"/>
+  </svg>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 /* 1. 3D NASA LOLA GLOBE */
 const canvas = document.getElementById('globe');
 let scene, camera, renderer, moon, moonMat, sunLight, sunMesh, earthMesh, lander, siteMarker;
-let ry = .35, rx = .15, zoom = 1.0, drag = false, px = 0, py = 0, selectedLat = -89.45, selectedLon = 136.67;
+let ry = .35, rx = .15, zoom = 1.0, drag = false, px = 0, py = 0, selectedLat = -89.45, selectedLon = 136.67, globeInitialized = false;
 const raycaster = window.THREE ? new THREE.Raycaster() : null, pointer = window.THREE ? new THREE.Vector2() : null;
-const NASA_DEM = 'https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_3_8bit.jpg';
-const NASA_COLOR = 'https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg';
+const NASA_DEM = '/api/lunar-map/dem';
+const NASA_COLOR = '/api/lunar-map/color';
+let colorMapReady = false, elevationMapReady = false, colorMapFailed = false, elevationMapFailed = false;
 
 const siteData = [
   {name:'Shackleton Connecting Ridge', lat:-89.45, lon:136.67},
@@ -219,6 +256,14 @@ const siteData = [
   {name:'Haworth Rim',                 lat:-87.50, lon: -5.00},
   {name:'Nobile Rim',                  lat:-85.20, lon: 53.30}
 ];
+
+let candidateMarkers = [], targetHalo;
+
+function updateMapStatus() {
+  const colorStatus = colorMapReady ? 'LRO COLOR' : (colorMapFailed ? 'COLOR FALLBACK' : 'LOADING COLOR');
+  const elevationStatus = elevationMapReady ? 'LOLA RELIEF' : (elevationMapFailed ? 'RELIEF FALLBACK' : 'LOADING RELIEF');
+  document.getElementById('mapStatus').textContent = `${colorStatus} · ${elevationStatus}`;
+}
 
 function latLonVector(lat, lon, r = 1.012) {
   const a = THREE.MathUtils.degToRad(lat), b = THREE.MathUtils.degToRad(lon);
@@ -253,28 +298,87 @@ function orientLander(lat, lon) {
   lander.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), pos.clone().normalize());
   lander.rotateY(THREE.MathUtils.degToRad(lon));
   siteMarker.position.copy(latLonVector(lat, lon, 1.012));
+  if (targetHalo) {
+    const normal = pos.clone().normalize();
+    targetHalo.position.copy(latLonVector(lat, lon, 1.014));
+    targetHalo.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), normal);
+  }
+  const selectedPreset = siteData.findIndex(site => Math.abs(site.lat - lat) < .02 && Math.abs(site.lon - lon) < .02);
+  candidateMarkers.forEach((marker, index) => {
+    marker.material.color.setHex(index === selectedPreset ? 0xffbd59 : 0x9ab4d0);
+    marker.scale.setScalar(index === selectedPreset ? 1.35 : 1);
+  });
   document.getElementById('landerLat').value = lat.toFixed(2);
   document.getElementById('landerLon').value = lon.toFixed(2);
   document.getElementById('hud').textContent = `LANDING TARGET · ${lat.toFixed(2)}° · ${lon.toFixed(2)}°`;
 }
 
 function init3d() {
-  if (!window.THREE) return;
+  if (!window.THREE || globeInitialized) return;
+  globeInitialized = true;
   scene = new THREE.Scene(); scene.background = new THREE.Color(0x050b14); scene.fog = new THREE.Fog(0x050b14, 8, 18);
   camera = new THREE.PerspectiveCamera(42, 1, .1, 100); camera.position.set(0, 1.5, 4.8);
   renderer = new THREE.WebGLRenderer({canvas, antialias:true}); renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  const starPositions = new Float32Array(1800 * 3);
+  for (let i = 0; i < starPositions.length; i += 3) {
+    const radius = 12 + Math.random() * 12, theta = Math.random() * Math.PI * 2, phi = Math.acos(2 * Math.random() - 1);
+    starPositions[i] = radius * Math.sin(phi) * Math.cos(theta);
+    starPositions[i + 1] = radius * Math.cos(phi);
+    starPositions[i + 2] = radius * Math.sin(phi) * Math.sin(theta);
+  }
+  const starGeometry = new THREE.BufferGeometry();
+  starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starPositions, 3));
+  scene.add(new THREE.Points(starGeometry, new THREE.PointsMaterial({color:0xc2dcff, size:.035, transparent:true, opacity:.8, sizeAttenuation:true, fog:false})));
   scene.add(new THREE.AmbientLight(0x667b9b, .45));
   sunLight = new THREE.DirectionalLight(0xffe5b3, 2.8); sunLight.position.set(5, 2.5, 3); scene.add(sunLight);
   sunMesh = new THREE.Mesh(new THREE.SphereGeometry(.23, 24, 24), new THREE.MeshBasicMaterial({color:0xffd27a})); sunMesh.position.copy(sunLight.position).multiplyScalar(1.55); scene.add(sunMesh);
   earthMesh = new THREE.Mesh(new THREE.SphereGeometry(.115, 24, 24), new THREE.MeshStandardMaterial({color:0x2876c7, emissive:0x071b3d})); earthMesh.position.set(-3.1, .95, -2.4); scene.add(earthMesh);
 
   const loader = new THREE.TextureLoader(); loader.setCrossOrigin('anonymous');
-  const colorTex = loader.load(NASA_COLOR, () => { moonMat.map = colorTex; moonMat.needsUpdate = true; });
-  moonMat = new THREE.MeshStandardMaterial({color:0xaaa9a4, roughness:1});
-  moon = new THREE.Mesh(new THREE.SphereGeometry(1, 160, 120), moonMat); scene.add(moon);
+  moonMat = new THREE.MeshStandardMaterial({color:0xaaa9a4, roughness:.94});
+  loader.load(NASA_COLOR, texture => {
+    texture.encoding = THREE.sRGBEncoding;
+    moonMat.map = texture;
+    moonMat.color.set(0xffffff);
+    moonMat.needsUpdate = true;
+    colorMapReady = true;
+    updateMapStatus();
+  }, undefined, () => {
+    colorMapFailed = true;
+    updateMapStatus();
+  });
+  loader.load(NASA_DEM, texture => {
+    moonMat.displacementMap = texture;
+    moonMat.displacementScale = .035;
+    moonMat.displacementBias = -.017;
+    moonMat.bumpMap = texture;
+    moonMat.bumpScale = .012;
+    moonMat.needsUpdate = true;
+    elevationMapReady = true;
+    updateMapStatus();
+  }, undefined, () => {
+    elevationMapFailed = true;
+    updateMapStatus();
+  });
+  moon = new THREE.Mesh(new THREE.SphereGeometry(1, 256, 192), moonMat); scene.add(moon);
+  const atmosphere = new THREE.Mesh(
+    new THREE.SphereGeometry(1.04, 64, 48),
+    new THREE.MeshBasicMaterial({color:0x4ca3db, transparent:true, opacity:.1, side:THREE.BackSide, depthWrite:false})
+  );
+  scene.add(atmosphere);
   lander = buildLander(); scene.add(lander);
-  siteMarker = new THREE.Mesh(new THREE.SphereGeometry(.025, 16, 16), new THREE.MeshBasicMaterial({color:0x53e8ff})); scene.add(siteMarker);
+  candidateMarkers = siteData.map(site => {
+    const marker = new THREE.Mesh(new THREE.SphereGeometry(.012, 12, 12), new THREE.MeshBasicMaterial({color:0x9ab4d0}));
+    marker.position.copy(latLonVector(site.lat, site.lon, 1.008));
+    scene.add(marker);
+    return marker;
+  });
+  siteMarker = new THREE.Mesh(new THREE.SphereGeometry(.02, 16, 16), new THREE.MeshBasicMaterial({color:0x53e8ff})); scene.add(siteMarker);
+  targetHalo = new THREE.Mesh(new THREE.TorusGeometry(.045, .003, 8, 48), new THREE.MeshBasicMaterial({color:0x59d9f2}));
+  scene.add(targetHalo);
   orientLander(selectedLat, selectedLon);
+  updateMapStatus();
   resize3d(); window.addEventListener('resize', resize3d); animate();
 }
 
@@ -291,6 +395,7 @@ function animate() {
   const sx = Math.cos(phase) * 5, sz = Math.sin(phase) * 5, sy = 1.8 + Math.sin(phase * .5) * 1.2;
   sunLight.position.set(sx, sy, sz); sunMesh.position.set(sx*1.55, sy*1.55, sz*1.55);
   moon.rotation.y = ry; moon.rotation.x = rx * .18;
+  if (siteMarker) siteMarker.scale.setScalar(1 + .16 * Math.sin(Date.now() * .004));
   camera.position.set(0, 1.5, 4.8 / zoom); camera.lookAt(0, 0, 0);
   renderer.render(scene, camera);
 }
@@ -325,6 +430,64 @@ document.getElementById('resetCamera').addEventListener('click', () => { ry = .3
 let LATEST_DATA = null;
 const byId = id => document.getElementById(id);
 const pad2 = n => String(n).padStart(2, '0');
+
+function initSunCursor() {
+  const cursor = byId('sunCursor');
+  if (!cursor || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  document.body.classList.add('sun-cursor-enabled');
+  window.addEventListener('pointermove', event => {
+    if (event.pointerType === 'touch') return;
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
+    cursor.classList.add('visible');
+  });
+  window.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'touch') cursor.classList.add('clicking');
+  });
+  window.addEventListener('pointerup', () => cursor.classList.remove('clicking'));
+  window.addEventListener('pointercancel', () => cursor.classList.remove('clicking'));
+  window.addEventListener('blur', () => cursor.classList.remove('visible', 'clicking'));
+}
+
+function showPage(pageId) {
+  const page = byId(pageId) || byId('page-overview');
+  document.querySelectorAll('.page-view').forEach(view => view.classList.toggle('active', view === page));
+  document.querySelectorAll('.nav [data-page]').forEach(link => link.classList.toggle('active', link.dataset.page === page.id));
+
+  if (page.id === 'page-sites' && !globeInitialized) init3d();
+  requestAnimationFrame(() => {
+    if (!page.classList.contains('active')) return;
+    if (page.id === 'page-sites') resize3d();
+    renderAllModules();
+  });
+  window.scrollTo(0, 0);
+}
+
+function showPageFromHash() {
+  const pageId = window.location.hash.slice(1);
+  const legacyPages = {
+    overview: 'page-overview',
+    terrain: 'page-sites',
+    sites: 'page-sites',
+    skyview: 'page-comms',
+    analysis: 'page-power',
+    energy: 'page-power',
+    sustain: 'page-power',
+    dates: 'page-planning',
+    missionTimeline: 'page-planning'
+  };
+  showPage(pageId.startsWith('page-') ? pageId : (legacyPages[pageId] || 'page-overview'));
+}
+
+document.querySelectorAll('.nav [data-page]').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    if (window.location.hash === `#${link.dataset.page}`) showPage(link.dataset.page);
+    else window.location.hash = link.dataset.page;
+  });
+});
+window.addEventListener('hashchange', showPageFromHash);
 
 function addDays(date, n) {
   const d = new Date(date + 'T12:00:00Z');
@@ -369,6 +532,8 @@ async function fetchBackendSimulation() {
   };
 
   byId('backendStatusPill').textContent = '⏳ QUERYING NASA HORIZONS & ML...';
+  byId('sideSourceBadge').textContent = '● CONNECTING TO BACKEND...';
+  byId('sideSourceBadge').className = 'amber';
   try {
     const res = await fetch('/api/simulate', {
       method: 'POST',
@@ -377,9 +542,14 @@ async function fetchBackendSimulation() {
     });
     LATEST_DATA = await res.json();
     byId('backendStatusPill').textContent = '● ' + LATEST_DATA.data_source.toUpperCase();
+    const liveEphemeris = LATEST_DATA.data_source === 'NASA JPL Horizons Live API';
+    byId('sideSourceBadge').textContent = liveEphemeris ? '● NASA JPL HORIZONS LIVE' : '● ANALYTICAL EPHEMERIS FALLBACK';
+    byId('sideSourceBadge').className = liveEphemeris ? 'green' : 'amber';
     renderAllModules();
   } catch (err) {
     byId('backendStatusPill').textContent = '❌ BACKEND OFFLINE (RUN python app.py)';
+    byId('sideSourceBadge').textContent = '● BACKEND OFFLINE';
+    byId('sideSourceBadge').className = 'red';
   }
 }
 
@@ -596,7 +766,7 @@ function renderComparisonAndBrief(d, siteName, score, status, days, cap, dload, 
   byId('advisorOutput').textContent = [
     q ? `QUESTION: ${q}` : 'NASA + ML MISSION BRIEFING',
     `Target: ${siteName} (${selectedLat.toFixed(2)}°, ${selectedLon.toFixed(2)}°) | Start: ${dateStr} (${days} days)`,
-    `Data Source: ${d.data_source} + Random Forest Horizon Surrogate (Terrain Risk ${d.terrain_risk}/4.0)`,
+    `Data Source: ${d.data_source} + Random Forest trained on the generated terrain grid (Terrain Risk ${d.terrain_risk}/4.0)`,
     `Illumination & Comms: ${d.sim_m.lit_pct}% sunlit mission fraction; ${d.ranked_sites[0].name} leads overall ranking at ${d.ranked_sites[0].score}/100.`,
     `Battery Verdict: ${d.sustain.verdict} — ${d.sustain.why}`
   ].join('\n');
@@ -671,6 +841,7 @@ byId('askAdvisor').addEventListener('click', async () => {
   byId(id).addEventListener('change', markParamsPending);
 });
 
-init3d();
+initSunCursor();
+showPageFromHash();
 fetchBackendSimulation();
 </script></body></html>

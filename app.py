@@ -5,16 +5,24 @@ Run: python app.py
 import os
 import re
 from datetime import datetime, timedelta
+from urllib.error import URLError
+from urllib.request import urlopen
 import joblib
 import numpy as np
 import pandas as pd
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, Response, jsonify, render_template, request
 try:
     from astroquery.jplhorizons import Horizons
 except ImportError:
     Horizons = None
 
 app = Flask(__name__)
+
+LUNAR_MAP_ASSETS = {
+    "color": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
+    "dem": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_3_8bit.jpg",
+}
+LUNAR_MAP_CACHE = {}
 
 HORIZON_MODEL = joblib.load("models/horizon_rf.pkl") if os.path.exists("models/horizon_rf.pkl") else None
 RISK_MODEL = joblib.load("models/risk_rf.pkl") if os.path.exists("models/risk_rf.pkl") else None
@@ -189,6 +197,27 @@ def evaluate_all_sites(date_str, days, cap, load, array, init_charge, dark_load)
 @app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/api/lunar-map/<asset_name>")
+def lunar_map_asset(asset_name):
+    asset_url = LUNAR_MAP_ASSETS.get(asset_name)
+    if asset_url is None:
+        return jsonify({"error": "Unknown lunar map asset"}), 404
+
+    image = LUNAR_MAP_CACHE.get(asset_name)
+    if image is None:
+        try:
+            with urlopen(asset_url, timeout=15) as response:
+                image = response.read(4 * 1024 * 1024 + 1)
+            if len(image) > 4 * 1024 * 1024:
+                app.logger.warning("NASA lunar map asset exceeds the allowed size: %s", asset_name)
+                return jsonify({"error": "Lunar map asset is too large"}), 502
+            LUNAR_MAP_CACHE[asset_name] = image
+        except (URLError, TimeoutError, OSError) as exc:
+            app.logger.warning("Unable to load NASA lunar map asset %s: %s", asset_name, exc)
+            return jsonify({"error": "NASA lunar map asset is unavailable"}), 502
+
+    return Response(image, mimetype="image/jpeg", headers={"Cache-Control": "public, max-age=86400"})
 
 @app.route("/api/simulate", methods=["POST"])
 def api_simulate():
