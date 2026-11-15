@@ -3,6 +3,7 @@
 venv/
 env/
 .venv/
+.vercel/
 
 # Python cache
 __pycache__/

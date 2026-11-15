@@ -18,14 +18,18 @@ except ImportError:
 
 app = Flask(__name__)
 
+MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
+
 LUNAR_MAP_ASSETS = {
     "color": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
     "dem": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_3_8bit.jpg",
 }
 LUNAR_MAP_CACHE = {}
 
-HORIZON_MODEL = joblib.load("models/horizon_rf.pkl") if os.path.exists("models/horizon_rf.pkl") else None
-RISK_MODEL = joblib.load("models/risk_rf.pkl") if os.path.exists("models/risk_rf.pkl") else None
+HORIZON_MODEL_PATH = os.path.join(MODEL_DIR, "horizon_rf.pkl")
+RISK_MODEL_PATH = os.path.join(MODEL_DIR, "risk_rf.pkl")
+HORIZON_MODEL = joblib.load(HORIZON_MODEL_PATH) if os.path.exists(HORIZON_MODEL_PATH) else None
+RISK_MODEL = joblib.load(RISK_MODEL_PATH) if os.path.exists(RISK_MODEL_PATH) else None
 
 CANDIDATE_SITES = [
     {"name": "Shackleton Connecting Ridge", "lat": -89.45, "lon": 136.67, "base": 76, "risk": 2.0, "base_h": 0.4},
